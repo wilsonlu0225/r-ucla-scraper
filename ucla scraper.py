@@ -9,7 +9,7 @@ import random
 from dotenv import load_dotenv
 
 load_dotenv()
-token = os.getenv('TOKEN')
+token = os.environ.get('TOKEN')
 
 
 bot = commands.Bot(command_prefix='.', intents=discord.Intents.all())

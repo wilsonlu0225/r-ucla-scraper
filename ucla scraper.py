@@ -66,7 +66,7 @@ if __name__ == "__main__":
     # Run Flask server in a separate thread
     from threading import Thread
 
-    flask_thread = Thread(target=lambda: app.run(host="0.0.0.0", port=5000))
+    flask_thread = Thread(target=lambda: app.run(host="0.0.0.0", port=8000))
     flask_thread.start()
 
     # Run Discord bot

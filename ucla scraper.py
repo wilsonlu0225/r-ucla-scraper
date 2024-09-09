@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 token = os.environ.get('TOKEN')
+print(token)
 
 
 bot = commands.Bot(command_prefix='.', intents=discord.Intents.all())

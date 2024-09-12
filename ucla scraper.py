@@ -8,6 +8,10 @@ from flask import Flask, request
 # Load environment variables
 load_dotenv()
 token = os.environ.get('TOKEN')
+reddit_client_id = os.environ.get('REDDIT_CLIENT_ID')
+reddit_username = os.environ.get('REDDIT_USERNAME')
+reddit_password = os.environ.get('REDDIT_PASSWORD')
+reddit_client_secret = os.environ.get('REDDIT_CLIENT_SECRET')
 
 # Discord bot setup
 bot = commands.Bot(command_prefix='.', intents=discord.Intents.all())
@@ -15,16 +19,16 @@ bot = commands.Bot(command_prefix='.', intents=discord.Intents.all())
 # Reddit setup
 import praw
 
-reddit_read_only = praw.Reddit(client_id="your_client_id",
-                               client_secret="your_client_secret",
+reddit_read_only = praw.Reddit(client_id=reddit_client_id,
+                               client_secret=reddit_client_secret,
                                user_agent="r/ucla scraper")
 
 reddit = praw.Reddit(
-    client_id="your_client_id",
-    client_secret="your_client_secret",
-    password="your_password",
+    client_id=reddit_client_id,
+    client_secret=reddit_client_secret,
+    password=reddit_password,
     user_agent="r/ucla scraper",
-    username="your_username",
+    username=reddit_username,
 )
 
 read_only_subreddit = reddit_read_only.subreddit("ucla")

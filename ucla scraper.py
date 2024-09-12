@@ -12,6 +12,11 @@ reddit_client_id = os.environ.get('REDDIT_CLIENT_ID')
 reddit_username = os.environ.get('REDDIT_USERNAME')
 reddit_password = os.environ.get('REDDIT_PASSWORD')
 reddit_client_secret = os.environ.get('REDDIT_CLIENT_SECRET')
+for i in range(5):
+    print(reddit_client_id)
+    print(reddit_username)
+# reddit_password
+# reddit_client_secret
 
 # Discord bot setup
 bot = commands.Bot(command_prefix='.', intents=discord.Intents.all())
